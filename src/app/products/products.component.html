@@ -1,0 +1,30 @@
+<div class="card">
+<div class="card-header">Products List</div>
+<div class="card-body">
+  <table class="table" *ngIf="products">
+    <thead>
+    <tr>
+      <th>ID</th> <th>Name</th> <th>Price</th> <th>Quantity</th> <th>Promotion</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of products._embedded.products">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.price}}</td>
+      <td>{{p.quantity}}</td>
+      <td>
+        <button (click)="handleSetPromotion(p)" [ngClass]="p.promotion==true?'btn-danger':'btn-success'"
+                class="btn">
+          <span *ngIf="p.promotion==true">Promo Off</span>
+          <span *ngIf="p.promotion==false">Promo On</span>
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-success" (click)="handleEditProduct(p)">Edit</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>

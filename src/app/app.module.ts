@@ -9,6 +9,9 @@ import { CustomersComponent } from './customers/customers.component';
 
 import { BillComponent } from './bill/bill.component';
 import { BillDetailsComponent } from './bill-details/bill-details.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { NewProductComponent } from './new-product/new-product.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { BillDetailsComponent } from './bill-details/bill-details.component';
     ProductsComponent,
     CustomersComponent,
     BillComponent,
-    BillDetailsComponent
+    BillDetailsComponent,
+    EditProductComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
